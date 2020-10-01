@@ -8,10 +8,12 @@ function MapOpen() {
     return (
         <Map center={[50.64, 5.57]} zoom={14}>
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
+                attribution={
+                    '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                }
             />
-            {Trees.map((tree) => (
+            {Trees.map(tree => (
                 <Marker
                     key={tree.arbotag}
                     position={[tree.y_phi, tree.x_lambda]}

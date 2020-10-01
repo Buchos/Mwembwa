@@ -11,7 +11,8 @@
     "work:server": "npx babel src/server -s --watch --verbose --out-dir bin/server",
     "build:client": "npx webpack --progress --profile --colors",
     "work:client": "npx webpack --env=dev --progress",
-    "build": "npm run build:server && npm run build:client"
+    "build": "npm run build:server && npm run build:client",
+    "start": "npm run work:client && npm run work:server"
   },
   "lint-staged": {
     "*.js": [
@@ -51,7 +52,8 @@
     "mongodb": "^3.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-leaflet": "^2.7.0"
+    "react-leaflet": "^2.7.0",
+    "react-modal": "^3.11.2"
   },
   "husky": {
     "hooks": {
