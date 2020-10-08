@@ -13,7 +13,7 @@ function MapOpen() {
                     '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 }
             />
-            {Trees.map(tree => (
+            {Trees.map((tree) => (
                 <Marker
                     key={tree.arbotag}
                     position={[tree.y_phi, tree.x_lambda]}

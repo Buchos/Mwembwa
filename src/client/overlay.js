@@ -1,6 +1,7 @@
 import React from "react";
 import TopBar from "./components/overlay-top";
-import LoginBar from "./components/overlay-right";
+import LoginBar from "./components/overlay-login";
+import Profile from "./components/user/profile";
 import "./style/overlay.css";
 
 export default function Overlay() {
@@ -8,6 +9,7 @@ export default function Overlay() {
         <div className={"overlay"}>
             <TopBar />
             <LoginBar />
+            <Profile />
         </div>
     );
 }

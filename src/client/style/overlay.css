@@ -1,8 +1,12 @@
-html{
+html {
     overflow: hidden;
 }
 
-.overlay > *{
+body{
+    font-family: 'Cabin', sans-serif;
+}
+
+.overlay > * {
     width: 100%;
     position: absolute;
     z-index: 750;
@@ -10,24 +14,31 @@ html{
 
 .overlayTopContainer {
     top: 30px;
-    left: 45%;
+    left: 35%;
     /*transform: translateX(-50%);*/
     color: green;
 }
 
-.overlayLoginContainer{
+.overlayTopContainer > h1 {
+    text-align: center;
+    background-color:honeydew;
+    padding-top: 10px;
+    width: 500px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.overlayLoginContainer {
     width: 200px;
     background-color: honeydew;
-    top: 38%;
-    left: 42%;
-    padding: 20px;
+    top: 30%;
+    left: 40%;
+    padding: 30px 60px 30px 60px;
+    border-radius: 4px;
+    box-shadow: rgb(94, 94, 94);
 }
 
-button{
-    width: 80px;
-    height: 35px;
-}
-
-.modal-style{
-    z-index: 900;
+.login-body{
+    padding-bottom: 10px;
+    line-height: 1.8;
 }

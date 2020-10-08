@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Signup() {
+    
     return (
         <div className={"modal-style"}>
             <h2>Sign Up</h2>

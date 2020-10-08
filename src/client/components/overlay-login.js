@@ -1,7 +1,8 @@
 import React from "react";
-import Login from "./login/login";
-import Signup from "./login/signup";
+import Login from "./user/login";
+import Signup from "./user/signup";
 import Button from "./button";
+import "../style/buttons.css";
 
 export default class LoginBar extends React.Component {
     constructor(props) {
@@ -38,11 +39,7 @@ export default class LoginBar extends React.Component {
             <>
                 {this.state.window ? (
                     <div className={"overlayLoginContainer"}>
-                        <div>
-                            {this.state.login ? <Login /> : ""}
-                            {this.state.signup ? <Signup /> : ""}
-                        </div>
-                        <div>
+                        <div className={"login-button"}>
                             <Button
                                 label={this.state.login ? "Sign Up" : "Log In"}
                                 handleClick={
@@ -51,12 +48,21 @@ export default class LoginBar extends React.Component {
                                         : this.showLogin
                                 }
                             />
-                            <Button label={"Enter"} handleClick={this.close} />
+                        </div>
+                        <div className={"login-body"}>
+                            {this.state.login ? <Login /> : ""}
+                            {this.state.signup ? <Signup /> : ""}
+                        </div>
+                        <div className={"submit-button"}>
+                            <Button 
+                                label={"Enter"} 
+                                handleClick={this.close} 
+                            />
                         </div>
                     </div>
-                ) : 
+                ) : (
                     ""
-                }
+                )}
             </>
         );
     }
