@@ -1,3 +1,4 @@
+// import { resolveSoa } from "dns";
 /* becodeorg/mwenbwa
  *
  * /src/server/index.js - Server entry point
@@ -8,35 +9,41 @@
 
 import express from "express";
 import path from "path";
-import MongoClient from "mongodb";
+const mongoose = require("mongoose");
+// const treeRoutes = require("./routes/tree");
+// const userRoutes = require("./routes/user");
+// const Tree = require("./models/tree");
+// const User = require("./models/user");
 
-const { APP_PORT } = process.env;
+mongoose
+    .connect("mongodb://dev:dev@mongo:27017/", {
+        dbName: "mwenbwa",
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log("Connection to MongoDB successful"))
+    .catch(() => console.log("Connection to MongoDB failed"));
 
-// Connection URL
-const url = "mongodb://dev:dev@mongo:27017";
+const {APP_PORT} = process.env;
+const app = express();
 
-// Use connect method to connect to the server
-MongoClient.connect(url, (err, db) => {
-    console.log(err);
-    if (err !== null) {
-        throw new Error(err.message);
-    }
-    console.log("Connected successfully to server");
+app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
-    const app = express();
+// app.use("/api/auth", userRoutes);
+// app.use("/api/tree", treeRoutes);
 
-    app.use(express.static(path.resolve(__dirname, "../../bin/client")));
+// app.get("/*", (req, res) => {
+//     // eslint-disable-next-line no-sequences
+//     res.sendFile(
+//         path.resolve(__dirname, "../../bin/client/index.html"),
+//         err => {
+//             if (err) {
+//                 res.status(500).send(err);
+//             }
+//         },
+//     );
+// });
 
-    app.get("/hello", (req, res) => {
-        console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
-        res.send(db);
-    });
-
-    app.get(`/:name`, (req, res) => {
-        res.send(`Your name is ` + req.params.name + `\n`);
-    });
-
-    app.listen(APP_PORT, () =>
-        console.log(`🚀 Server is listening on port ${APP_PORT}.`),
-    );
-});
+app.listen(APP_PORT, () =>
+    console.log(`🚀 Server is listening on port ${APP_PORT}.`),
+);
