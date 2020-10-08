@@ -12,20 +12,20 @@ function Home() {
 
     return (
         <>
-            <div className="home-full-screen" style={{display: hide}}>
+            <div className={"home-full-screen"} style={{display: hide}}>
                 {" "}
             </div>
-            <div className="home-flex-container" style={{display: hide}}>
-                <div className="home-left">
+            <div className={"home-flex-container"} style={{display: hide}}>
+                <div className={"home-left"}>
                     <img
                         src={flatDesign}
-                        className="home-flat-design"
-                        alt="flat design"
+                        className={"home-flat-design"}
+                        alt={"flat design"}
                     />
                     <a
-                        href="#"
+                        href={"#"}
                         onClick={() => setConnexionStatus(!connexionStatus)}
-                        className="home-create-button">
+                        className={"home-create-button"}>
                         {connexionStatus
                             ? "Create an account"
                             : "I already have an account"}
