@@ -10,7 +10,7 @@ import express from "express";
 import path from "path";
 import MongoClient from "mongodb";
 
-const {APP_PORT} = process.env;
+const { APP_PORT } = process.env;
 
 // Connection URL
 const url = "mongodb://dev:dev@mongo:27017";
@@ -27,14 +27,14 @@ MongoClient.connect(url, (err, db) => {
 
     app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
-    // app.get("/hello", (req, res) => {
-    //     console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
-    //     res.send(db);
-    // });
+    app.get("/hello", (req, res) => {
+        console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
+        res.send(db);
+    });
 
-    // app.get(`/:name`, (req, res) => {
-    //     res.send(`Your name is ` + req.params.name + `\n`);
-    // });
+    app.get(`/:name`, (req, res) => {
+        res.send(`Your name is ` + req.params.name + `\n`);
+    });
 
     app.listen(APP_PORT, () =>
         console.log(`🚀 Server is listening on port ${APP_PORT}.`),

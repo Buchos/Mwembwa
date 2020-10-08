@@ -1,10 +1,18 @@
 // eslint-disable-next-line unicorn/filename-case
 import React from "react";
 import "./MapOpen.css";
-import {Map, Marker, TileLayer} from "react-leaflet";
+import { Map, Marker, TileLayer } from "react-leaflet";
 import Trees from "./data/arbustum.json";
+import icondata from "./data/tree.png"
 
 function MapOpen() {
+    const icon = L.icon({
+        iconUrl: icondata,
+        iconAnchor: [10, 0],
+        iconSize: [50, 50]
+    })
+
+
     return (
         <Map center={[50.64, 5.57]} zoom={14}>
             <TileLayer
@@ -14,6 +22,7 @@ function MapOpen() {
             {Trees.map((tree) => (
                 <Marker
                     key={tree.arbotag}
+                    icon={icon}
                     position={[tree.y_phi, tree.x_lambda]}
                 />
             ))}
