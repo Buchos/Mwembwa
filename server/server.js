@@ -2,6 +2,8 @@ const express = require ("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 const auth = require('./middleware/auth.js');
 const dataRoutes = require('./routes/approutes');
 const userRoutes = require('./routes/user');
@@ -14,7 +16,7 @@ mongoose.connect('mongodb+srv://treemap:HIvjRLvd3N6Xblb1@lynerah.az3dd.gcp.mongo
 
 const http = require('http');
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 8000;
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,11 +26,11 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use('/user', userRoutes);
+app.use('/data', dataRoutes);
 app.use(auth);
-app.get('/hello',function(req,res){
-    res.json("Hello World")
-})
+
 
 // app.use('/data/arbustum', (req, res, next) => {
 // 	const tree = new Tree ({
@@ -46,7 +48,7 @@ app.get('/hello',function(req,res){
 // });
 
 app.post('./data/arbustrum', dataRoutes);
-// app.post('/user', userRoutes);
+app.post('/user', userRoutes);
 
 
 const server = http.createServer((req, res) => {
@@ -60,6 +62,6 @@ const server = http.createServer((req, res) => {
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-app.listen(3000, function(){
+app.listen(port, function(){
 	console.log("Server has started!!")
 });
