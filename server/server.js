@@ -8,7 +8,7 @@ const auth = require('./middleware/auth.js');
 const dataRoutes = require('./routes/approutes');
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://treemap:HIvjRLvd3N6Xblb1@lynerah.az3dd.gcp.mongodb.net/treemap?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://nameDB:password@lynerah.az3dd.gcp.mongodb.net/nameDB?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
