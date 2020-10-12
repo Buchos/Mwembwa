@@ -3,16 +3,18 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+require('dotenv').config();
 const auth = require('./middleware/auth.js');
 const dataRoutes = require('./routes/approutes');
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://nameDB:password@lynerah.az3dd.gcp.mongodb.net/nameDB?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+ const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
 
 const http = require('http');
 const hostname = '127.0.0.1';
