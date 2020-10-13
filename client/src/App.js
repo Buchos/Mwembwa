@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 
 import SignPage from './components/Auth';
-import LoginPage from '.components/login';
+// import LoginPage from '.components/login';
 import MapPage from './components/Map';
 import MainNav from './components/Navigation/MainNav';
 
