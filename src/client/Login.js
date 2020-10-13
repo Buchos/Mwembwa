@@ -1,7 +1,7 @@
-// eslint-disable-next-line unicorn/filename-case
+/* eslint-disable unicorn/filename-case */
 import React from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt, faUnlock } from "@fortawesome/free-solid-svg-icons";
 
 function Login(props) {
     if (props.connexionStatus == true) {
