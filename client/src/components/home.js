@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
 import '../Home.css';
 import flatDesign from "../data/flat-design.jpg";
-
+import Login from "./Login";
 import Signup from "../components/Auth";
 
 function Home() {
@@ -35,7 +35,7 @@ function Home() {
 							: "I already have an account"}
 					</a>
 				</div>
-			 
+			    <Login connexionStatus={connexionStatus} setHide={setHide} />
 				 <Signup connexionStatus={connexionStatus} setHide={setHide} />
 			</div>
 		</>
