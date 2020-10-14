@@ -1,10 +1,9 @@
-// eslint-disable-next-line unicorn/filename-case
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./ModalRules.css";
-import tree from "./data/tree.png";
-import leaf from "./data/leaf.png";
+import tree from "../data/tree.png";
+import leaf from "../data/leaf.png";
 
 function ModalRules(props) {
     return (
