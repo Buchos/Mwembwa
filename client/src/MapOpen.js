@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/filename-case
 import React from "react";
 import "./MapOpen.css";
 import {Map, Marker, TileLayer, Popup} from "react-leaflet";

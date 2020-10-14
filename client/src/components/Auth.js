@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faUser, faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
+import '../Home.css';
+
 
 class SignPage extends Component {
 	
 	constructor(props) {
 		super(props);
-		// this.emailElement = React.createRef();
-		// this.passwordElement = React.createRef();
 		this.onChangeUserName = this.onChangeUserName.bind(this);
 		this.onChangeEmail = this.onChangeEmail.bind(this);
 		this.onChangePassword = this.onChangePassword.bind(this);
@@ -67,20 +69,57 @@ class SignPage extends Component {
 	
 	render() {
 		return (
-			<Form onSubmit={this.onSubmit}>
-				<FormGroup>
-				<Label for="name">Email</Label>
-				<Input type="text" name="name" id="name" value={this.state.username} onChange={this.onChangeUserName} placeholder="Name" />
-			  </FormGroup>
-			  <FormGroup>
-				<Label for="exampleEmail">Email</Label>
-				<Input type="email" name="email" id="exampleEmail" value={this.state.email} onChange={this.onChangeEmail} placeholder="with a placeholder" />
-			  </FormGroup>
-			  <FormGroup>
-				<Label for="examplePassword">Password</Label>
-				<Input type="password" name="password" id="examplePassword" value={this.state.password} onChange={this.onChangePassword}  placeholder="password placeholder" />
-			  </FormGroup>
-			  <Button type="submit">Submit</Button>
+			<Form className="home-right" onSubmit={this.onSubmit}>
+				<h1 className="home-signup-title">Sign Up</h1>
+				<div className="home-signup-text-input-container">
+					<FontAwesomeIcon
+						icon={faUser}
+						className="home-signup-icon-username"
+					/>
+					<Input
+						className="home-signup-text-input" value={this.state.username} onChange={this.onChangeUserName} 
+						type="text"
+						name="username"
+						placeholder="Username"
+					/>
+				</div>
+				<div className="home-signup-text-input-container">
+					<FontAwesomeIcon
+						icon={faAt}
+						className="home-signup-icon-email"
+					/>
+					<Input
+						className="home-signup-email-input"
+						type="text"
+						name="username"
+						placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} 
+					/>
+				</div>
+			
+				<div className="home-signup-text-password-container">
+					<FontAwesomeIcon
+						icon={faUnlock}
+						className="home-signup-icon-password"
+					/>
+					<Input
+						className="home-signup-password-input" value={this.state.password} onChange={this.onChangePassword} 
+						type="password"
+						name="password"
+						placeholder="Password"
+					/>
+				</div>
+				<div className="home-signup-checkbox-container">
+					<Input type="color" name="" />
+					<span className="home-signup-span-checkbox">
+						Choose your color
+					</span>
+				</div>
+				<button
+					onSubmit={this.onSubmit}
+					className="home-signup-submit-button"
+					type="submit">
+					Sign Up
+				</button>
 			</Form>
 		);
 	}
