@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/filename-case
 import React, {useState} from "react";
 import {Popup} from "react-leaflet";
 import tree from "./data/tree.png";

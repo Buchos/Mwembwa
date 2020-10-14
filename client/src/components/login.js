@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
 
 class LoginPage extends Component {
 	
@@ -68,19 +70,49 @@ class LoginPage extends Component {
 	render() {
 		return (
 			<Form onSubmit={this.onSubmit}>
-				<FormGroup>
-				<Label for="name">Email</Label>
-				<Input type="text" name="name" id="name" value={this.state.username} onChange={this.onChangeUserName} placeholder="Name" />
-			  </FormGroup>
-			  <FormGroup>
-				<Label for="exampleEmail">Email</Label>
-				<Input type="email" name="email" id="exampleEmail" value={this.state.email} onChange={this.onChangeEmail} placeholder="with a placeholder" />
-			  </FormGroup>
-			  <FormGroup>
-				<Label for="examplePassword">Password</Label>
-				<Input type="password" name="password" id="examplePassword" value={this.state.password} onChange={this.onChangePassword}  placeholder="password placeholder" />
-			  </FormGroup>
-			  <Button type="submit">Submit</Button>
+				<div className="home-right">
+					<h1 className="home-login-title">Login</h1>
+					<div className="home-login-text-input-container">
+						<FontAwesomeIcon
+							icon={faAt}
+							className="home-login-icon-username"
+						/>
+						<input
+							className="home-login-email-input"
+							type="email"
+							name="username"
+							placeholder="Email"
+						/>
+					</div>
+					<div className="home-login-text-password-container">
+						<FontAwesomeIcon
+							icon={faUnlock}
+							className="home-login-icon-password"
+						/>
+						<input
+							className="home-login-password-input"
+							type="password"
+							name="password"
+							placeholder="Password"
+						/>
+					</div>
+					<div className="home-login-checkbox-container">
+						<input
+							className="home-login-checkbox"
+							type="checkbox"
+							name="remember-me"
+						/>
+						<span className="home-login-span-checkbox">
+							Remember me
+						</span>
+					</div>
+					<button
+						onClick={() => props.setHide("none")}
+						className="home-login-submit-button"
+						type="submit">
+						Login
+					</button>
+				</div>
 			</Form>
 		);
 	}

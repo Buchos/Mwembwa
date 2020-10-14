@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/user', userRoutes);
-app.use('/data', dataRoutes);
+// app.use('/data', dataRoutes);
 app.use(auth);
 
 
@@ -49,7 +49,7 @@ app.use(auth);
 // 	});
 // });
 
-app.post('./data/arbustrum', dataRoutes);
+// app.post('./data/arbustrum', dataRoutes);
 app.post('/user', userRoutes);
 
 
