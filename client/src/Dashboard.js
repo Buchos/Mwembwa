@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/filename-case
 import React, { useState } from "react";
 import "./Dashboard.css";
 import player from "./data/player.jpg";
@@ -10,9 +9,9 @@ import {
     faSignOutAlt,
     faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import ModalSettings from "./ModalSettings";
-import ModalRules from "./ModalRules";
-import ModalLogout from "./ModalLogout";
+import ModalSettings from "./components/ModalSettings";
+import ModalRules from "./components/ModalRules";
+import ModalLogout from "./components/ModalLogout";
 
 function Dashboard() {
     // Modal settings
