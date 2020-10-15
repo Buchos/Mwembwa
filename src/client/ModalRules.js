@@ -18,6 +18,8 @@ function ModalRules(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>
                         <img className="tree-image" src={tree} />
+                        IL NE FAUT PAS TROP EN DEMANDER A CE MODAL,
+                        IL FAIT DE SON MIEUX !
                         Game Rules
                         <img className="tree-image" src={tree} />
                     </Modal.Title>
