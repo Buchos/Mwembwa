@@ -12,7 +12,7 @@
     "build:client": "npx webpack --progress --profile --colors",
     "work:client": "npx webpack --env=dev --progress",
     "build": "npm run build:server && npm run build:client",
-    "prettier": "npx prettier --write src"
+    "prettier": "npx prettier --write server"
   },
   "lint-staged": {
     "*.js": [
