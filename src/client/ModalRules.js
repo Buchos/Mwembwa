@@ -18,31 +18,29 @@ function ModalRules(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>
                         <img className="tree-image" src={tree} />
-                        CETTE MODALE FONCTIONNE, <br>
-                            ELLE FAIT DE SON MIEUX !
-                            Game Rules
+                        Game Rules
                         <img className="tree-image" src={tree} />
                     </Modal.Title>
                 </Modal.Header>
-                    <Modal.Body>
-                        <p>
-                            <img className="tree-image" src={leaf} />
+                <Modal.Body>
+                    <p>
+                        <img className="tree-image" src={leaf} />
                         Buy a lot of trees
                     </p>
-                        <p>
-                            <img className="tree-image" src={leaf} />
+                    <p>
+                        <img className="tree-image" src={leaf} />
                         Lock the trees you just bought
                     </p>
-                        <p>
-                            <img className="tree-image" src={leaf} />
+                    <p>
+                        <img className="tree-image" src={leaf} />
                         Enjoy !
                     </p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="success" onClick={props.handleCloseRules}>
-                            Understood
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={props.handleCloseRules}>
+                        Understood
                     </Button>
-                    </Modal.Footer>
+                </Modal.Footer>
             </Modal>
         </>
     );
