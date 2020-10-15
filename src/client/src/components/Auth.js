@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Modal } from 'reactstrap';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
 import '../Home.css';
@@ -64,7 +64,7 @@ class SignPage extends Component {
 		  username: '',
 		  email : '',
 		  password : ''	})
-	// window.location = '/';
+	// window.location = '/map';
 	}		
 	
 	render() {

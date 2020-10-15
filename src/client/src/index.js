@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MapOpen from "./components/MapOpen";
+import MapOpenI from "./components/MapOpen";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// ReactDOM.render(<Home/>, document.getElementById('root'));
+
 
 ReactDOM.render(
     <div className="main-flex-container">
         <Home />
         <Dashboard />
-        <MapOpen />
+        <MapOpenI />
     </div>,
     document.querySelector("#root"),
 );
