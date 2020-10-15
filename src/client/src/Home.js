@@ -3,7 +3,7 @@ import "./Home.css";
 import flatDesign from "./data/flat-design.jpg";
 
 import SignPage from './components/Auth';
-import MapPage from './components/Map';
+import MapOpen from './components/MapOpen';
 import HomePage from './components/home';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ class Home extends Component {
     <Redirect from="/" to="/home" exact />
     <Route path="/home" component={HomePage}/>
     <Route path="/signup" component={SignPage}/>
-    <Route path="/map" component={MapPage}/>
+    <Route path="/map" component={MapOpen}/>
     </Switch>
     </BrowserRouter>
   );

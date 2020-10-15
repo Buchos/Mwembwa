@@ -1,11 +1,12 @@
-import React from "react";
+import React, {Component} from 'react';
+import L from 'leaflet';
 import "./MapOpen.css";
 import {Map, Marker, TileLayer, Popup} from "react-leaflet";
-import Trees from "./data/arbustum.json";
-import treepng from "./data/tree.png";
+import Trees from "../data/arbustum.json";
+import treepng from "../data/tree.png";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import leaf from "./data/leaf.png";
-import TreePopup from "./TreePopup";
+import leaf from "../data/leaf.png";
+import TreePopup from "../TreePopup";
 
 //Icon properties
 // eslint-disable-next-line no-undef

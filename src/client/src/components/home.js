@@ -5,8 +5,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faAt, faUnlock} from "@fortawesome/free-solid-svg-icons";
 import '../Home.css';
 import flatDesign from "../data/flat-design.jpg";
-import Login from "./Login";
+import Login from "../components/Login";
 import Signup from "../components/Auth";
+import MapOpen from '../components/MapOpen';
 
 function Home() {
 
